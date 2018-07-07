@@ -1,0 +1,2 @@
+# JSPractice
+Simple JS Examples
