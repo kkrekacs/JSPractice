@@ -145,3 +145,34 @@ function getEvenItemsFromArray(parameterArray) {
 
 document.querySelector('.feladat5').innerHTML = `A tömbben ${getEvenItemsFromArray(mainArray)} páros szám van!`;
 /* 5. Feladat vége */
+
+/* 6. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb második legkisebb elemét!
+Jobban járunk, ha általánosan írjuk meg a programot, x-ik legkisebb elemre. Ehhez persze elötte rendezni kell
+a tömbünket */
+function getNthMinOfArray(parameterArray, lookingForNthItem) {
+  var nthItem = advancedBubbleSort(mainArray)[lookingForNthItem - 1];
+
+  return nthItem;
+}
+
+document.querySelector('.feladat6').innerHTML = `A tömb 2. legkisebb elem: ${getNthMinOfArray(mainArray, 2)}`;
+/* 6. Feladat vége */
+
+function advancedBubbleSort(parameterArray) {
+  var tempArray = parameterArray.slice();
+  var endIndex = tempArray.length - 1;
+  var newEndIndex;
+  while (endIndex > 0) {
+    newEndIndex = 0;
+    for (var i = 0; i < endIndex - 1; i++) {
+      if (tempArray[i] > tempArray[i + 1]) {
+        [tempArray[i], tempArray[i + 1]] = [tempArray[i + 1], tempArray[i]];
+        newEndIndex = i;
+      }
+    }
+    endIndex = newEndIndex;
+  }
+
+  return tempArray;
+}
+
