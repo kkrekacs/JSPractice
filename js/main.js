@@ -85,3 +85,20 @@ function getMinValueOfArray(parameterArray) {
 
 document.querySelector('.feladat1').innerHTML = `A tömb legkisebb eleme: ${getMinValueOfArray(mainArray)}`;
 /* 1. Feladat vége*/
+
+/* 2. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legnagyobb elemét! */
+function getMaxValueOfArray(parameterArray) {
+  var tempArray = parameterArray.slice();
+  var maxItem = tempArray[0];
+
+  for (var i = 1; i < tempArray.length; i++) {
+    if (maxItem < tempArray[i]) {
+      maxItem = tempArray[i];
+    }
+  }
+
+  return maxItem;
+}
+
+document.querySelector('.feladat2').innerHTML = `A tömb legnagyobb eleme: ${getMaxValueOfArray(mainArray)}`;
+/* 2. Feladat vége*/
