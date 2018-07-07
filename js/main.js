@@ -191,6 +191,9 @@ var mixedTypeArray = [2467, 511, 7985, 8284, 2226, 4369, 880, 366, 5234, 7056, 8
   1609.26, 6987.38, 9819.13, 277.00, 5160.83, 6317.27, 5958.52, 9007.09, 6704.00, 4092.77, 5707.03, 1119.24, 4470.92,
   6213.20, 1130.22];
 
+var mixedTypeArrayAgain = [2467, 511, 7985, 'ycYbA', 8284, 2226, 'qnnp0', 'heV9Y', 4369, 'gBSvY', '7XjS0', '90Hy1',
+  'KptUs', 880, 366, 5234, 7056, 'PwAfw', 'UlGLz', 'lO3z6'];
+
 /* 1. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét! */
 function getMinValueOfArray(parameterArray) {
   var tempArray = parameterArray.slice();
@@ -440,3 +443,26 @@ function insertIntegerToArray(parameterArray) {
 
 document.querySelector('.feladat13').innerHTML += insertIntegerToArray(mainArray);
 /* 13. Feladat vége */
+/* 14. Feladat: Adott egy tömb, mely azonos darabú egész számot, és szöveget tartalmaz véletlenszerű sorrendben.
+Rendezzük úgy a tömböt, hogy minden szám után egy string következzen! Írasd ki a rendezett tömböt!*/
+function sortStringAfterNumber(parameterArray) {
+  var sortedArray = [];
+  var numberArray = [];
+  var stringArray = [];
+  for (var i = 0; i < parameterArray.length; i++) {
+    if (typeof parameterArray[i] === 'number') {
+      numberArray.push(parameterArray[i]);
+    } else {
+      stringArray.push(parameterArray[i]);
+    }
+  }
+  for (i = 0; i < numberArray.length; i++) {
+    sortedArray.push(numberArray[i]);
+    sortedArray.push(stringArray[i]);
+  }
+
+  return sortedArray;
+}
+
+document.querySelector('.feladat14').innerHTML = sortStringAfterNumber(mixedTypeArrayAgain);
+/* 14. Feladat vége */
