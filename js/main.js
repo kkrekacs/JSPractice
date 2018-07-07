@@ -130,3 +130,18 @@ function getSumOfArrayItems(parameterArray) {
 
 document.querySelector('.feladat4').innerHTML = `A tömb elemeinek összege: ${getSumOfArrayItems(mainArray)}`;
 /* 4. Feladat vége */
+
+/* 5. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb páros elemeinek a számát! */
+function getEvenItemsFromArray(parameterArray) {
+  var numberOfEvenItems = 0;
+  for (var i = 0; i < parameterArray.length; i++) {
+    if (parameterArray[i] % 2 === 0) {
+      numberOfEvenItems++;
+    }
+  }
+
+  return numberOfEvenItems;
+}
+
+document.querySelector('.feladat5').innerHTML = `A tömbben ${getEvenItemsFromArray(mainArray)} páros szám van!`;
+/* 5. Feladat vége */
