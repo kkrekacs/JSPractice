@@ -195,7 +195,7 @@ var mixedTypeArrayAgain = [2467, 511, 7985, 'ycYbA', 8284, 2226, 'qnnp0', 'heV9Y
   'KptUs', 880, 366, 5234, 7056, 'PwAfw', 'UlGLz', 'lO3z6'];
 
 var arrayA = [1, 2, 3, 4, 5];
-var arrayB = [3, 4, 5, 6, 7, 8, 9];
+var arrayB = [3, 4, 5, 6, 7];
 
 /* 1. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét! */
 function getMinValueOfArray(parameterArray) {
@@ -329,17 +329,17 @@ function binaryFindItemInArray(parameterArray, lookingForItem) {
   var startIndex = 0;
   var endIndex = tempArray.length;
   var middleIndex;
-  while (startIndex > endIndex) {
+  while (startIndex <= endIndex && !itemFound) {
     middleIndex = Math.floor((startIndex + endIndex) / 2);
+    if (tempArray[middleIndex] === lookingForItem) {
+      itemFound = true;
+    }
     if (tempArray[middleIndex] < lookingForItem) {
       startIndex = middleIndex + 1;
-    } else {
-      endIndex = middleIndex;
     }
-  }
-  if (tempArray[startIndex] === lookingForItem) {
-    itemFound = true;
-    return itemFound;
+    if (tempArray[middleIndex] > lookingForItem) {
+      endIndex = middleIndex - 1;
+    }
   }
 
   return itemFound;
@@ -496,5 +496,70 @@ document.querySelector('.feladat15ps').innerHTML = `Páros elemek: ${getEvenNumb
 document.querySelector('.feladat15ptlan').innerHTML = `Páratlan elemek: ${getUnevenNumbersFromArray(mainArray)}`;
 /* 15. Feladat vége*/
 
-/* 16. Feladat*/
+/* 16. Feladat: Adott két azonos elemszámú, csak egész számokat tartalmazó tömb. Külön tömbökbe készítsük el a két
+tömb: metszetét, unióját, különbségét, és descartes szorzatát. Írassuk ki az új tömböket!*/
+function getUnion(parameterArrayA, parameterArrayB) {
+  var unionArray = [];
+  for (var i = 0; i < parameterArrayA.length; i++) {
+    unionArray.push(parameterArrayA[i]);
+  }
+  for (i = 0; i < parameterArrayB.length; i++) {
+    var containsItem = false;
+    for (var j = 0; j < unionArray.length; j++) {
+      if (unionArray[j] === parameterArrayB[i]) {
+        containsItem = true;
+      }
+    }
+    if (!containsItem) {
+      unionArray.push(parameterArrayB[i]);
+    }
+  }
+
+  return unionArray;
+}
+
+function getIntersection(parameterArrayA, parameterArrayB) {
+  var intersectionArray = [];
+  for (var i = 0; i < parameterArrayA.length; i++) {
+    for (var j = 0; j < parameterArrayB.length; j++) {
+      if (parameterArrayA[i] === parameterArrayB[j]) {
+        intersectionArray.push(parameterArrayA[i]);
+      }
+    }
+  }
+
+  return intersectionArray;
+}
+
+function getDiffernce(parameterArrayA, parameterArrayB) {
+  var differenceArray = [];
+  for (var i = 0; i < parameterArrayA.length; i++) {
+    var containsItem = false;
+    for (var j = 0; j < parameterArrayB.length; j++) {
+      if (parameterArrayA[i] === parameterArrayB[j]) {
+        containsItem = true;
+      }
+    }
+    if (!containsItem) {
+      differenceArray.push(parameterArrayA[i]);
+    }
+  }
+
+  return differenceArray;
+}
+
+function getCartesian(parameterArrayA, parameterArrayB) {
+  var cartesianPairs = [];
+  for (var i = 0; i < parameterArrayA.length; i++) {
+    cartesianPairs.push(`{${parameterArrayA[i]}, ${parameterArrayB[i]}}`);
+  }
+
+  return cartesianPairs;
+}
+
+document.querySelector('.feladat16unio').innerHTML = `A és B halmaz uniója: ${getUnion(arrayA, arrayB)}`;
+document.querySelector('.feladat16metszet').innerHTML = `A és B halmaz metszete: ${getIntersection(arrayA, arrayB)}`;
+document.querySelector('.feladat16kulonbseg').innerHTML = `A és B halmaz különbsége: ${getDiffernce(arrayA, arrayB)}`;
+document.querySelector('.feladat16descartes').innerHTML = `A és B halmaz Descartes szorzata: ${getCartesian(arrayA, arrayB)}`;
+
 /* 16. Feladat vége */
