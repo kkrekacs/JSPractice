@@ -167,6 +167,30 @@ var mainFloatArray = [7918.79, 3188.71, 3518.16, 726.07, 498.94, 3330.42, 6703.0
   6987.38, 9819.13, 277.00, 5160.83, 6317.27, 5958.52, 9007.09, 6704.00, 4092.77, 5707.03, 1119.24, 4470.92, 6213.20,
   1130.22];
 
+var mixedTypeArray = [2467, 511, 7985, 8284, 2226, 4369, 880, 366, 5234, 7056, 894, 6923, 6602, 3009, 610, 8792, 2277,
+  8391, 1006, 2529, 8834, 580, 283, 964, 8105, 3416, 8954, 2974, 5136, 8847, 9930, 82, 8980, 8137, 8043, 1358, 7855, 9320,
+  8988, 2939, 7243, 607, 6993, 3568, 9497, 4362, 3991, 3847, 5417, 6175, 2416, 5800, 2333, 3632, 8566, 2071, 1175, 7030,
+  623, 6339, 3524, 332, 4436, 2137, 1312, 7552, 2835, 9669, 1725, 8833, 917, 7646, 7197, 8849, 1568, 9469, 4627, 3768,
+  8125, 109, 844, 6702, 4485, 807, 6810, 2729, 6992, 6779, 2769, 2070, 254, 1149, 2370, 6281, 3121, 9134, 9066, 7748,
+  1086, 9377, 3748, 8315, 7469, 5995, 9691, 759, 1384, 1617, 9118, 1226, 5495, 307, 1422, 4767, 3729, 7956, 8313, 7981,
+  6212, 3153, 8180, 2546, 3732, 8280, 5229, 8030, 949, 4562, 1620, 2295, 767, 6408, 844.19, 9282.39, 8071.56, 3224.40,
+  8666.90, 1203.99, 482.88, 1594.43, 9310.25, 1938.72, 4991.91, 4675.94, 5991.08,  203.01, 1800.14, 9536.80, 7938.98,
+  1746.85, 6585.03, 1733.92, 6878.27, 5182.23, 9801.26, 8976.43, 6591.74, 4020.82, 8198.79, 8497.76, 3447.45, 5563.49,
+  8303.81, 4987.02, 2220.21, 4295.38, 5287.12, 670.70, 2801.79, 528.25, 7196.18, 7971.43, 8011.90, 5510.33, 8421.74,
+  2764.82, 1028.34, 6420.25, 5218.21, 5519.74, 4927.76, 7576.72, 9637.91, 3866.29, 4934.55, 3490.14, 4658.44, 5251.95,
+  8694.69, 3673.19, 8616.96, 6457.82, 3826.47, 9837.60, 677.93, 8847.67, 2990.49, 5341.70, 4408.35, 5707.31, 6069.91,
+  4811.53, 'NeSAp', 'NBgVS', 'wPOEz', 'wGgYA', 'SAkGd', 'RvsDF', 'f3q9t', 'rKlPf', 'HdVRW', '8AgYc', 'n5edO', 'btrY3',
+  '37enk', 'QRBSp', 'qnnp0', 'heV9Y', 'ycYbA',  '7LwGM', '9GIxV', 'baKdC', 'gkUJq', 'heZ5k', 'dC2hH', 'xaB4A', 'GP3US',
+  'Rhu8q', 'gBSvY', '7XjS0', '90Hy1', 'KptUs', 'oJ41L', '3D5DV', 'CXDNd', '5dwv5', 'dm051', 'PWpxI', 'v8wKz', 'D1j6J',
+  '5QnkC', 'qZWFT', 'JDr55', 'ZTZce', 'WIbKW', 'FtmQT', 'RWx06', 'jmsOV', 'aLl2B', 'cB8Ao', 'PwAfw', 'UlGLz', 'lO3z6',
+  3704, 8176, 2495, 7567, 9996, 7475, 9781, 3417, 5835, 7184, 6218, 2114, 2414, 304, 9366, 629, 6735, 2020, 5995, 3183,
+  6300, 6517, 2606, 5440, 9906, 3005, 8723, 975, 5309, 3379, 128, 2195, 5179, 6651, 4688, 3169, 7641, 6758, 6803, 5340,
+  3688, 8480, 7481, 8320, 2519, 224, 1887, 8523, 8380, 83, 1292, 1660, 7764, 4049, 7050, 8959, 3436, 6576, 8266, 2548,
+  8660, 4086, 9965, 8430, 7676.61, 5634.29, 2513.76, 8895.90, 7756.26, 9648.24, 6480.30, 8209.06, 3871.74, 2194.97,
+  3807.79, 9725.26, 4672.37, 2503.38, 8583.56, 8656.97, 4523.96, 8419.50, 7729.96, 4337.66, 8262.48, 9429.21, 5059.19,
+  1609.26, 6987.38, 9819.13, 277.00, 5160.83, 6317.27, 5958.52, 9007.09, 6704.00, 4092.77, 5707.03, 1119.24, 4470.92,
+  6213.20, 1130.22];
+
 /* 1. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét! */
 function getMinValueOfArray(parameterArray) {
   var tempArray = parameterArray.slice();
@@ -360,6 +384,28 @@ function advancedBubbleSort(parameterArray) {
 }
 
 document.querySelector('.feladat11').innerHTML = `A rendezett tömb:<br>${advancedBubbleSort(mainFloatArray)}`;
-/* 11. Feladat*/
+/* 11. Feladat vége*/
 
+/* 12. Feladat: Rendezd a javított buborékos rendezés algoritmus segítségével egy tetszőleges elemszámú, beágyazott
+ tömb, és objektum kivételével bármilyen típusú elemeket tartalmazó tömb elemeit csökkenő sorrendbe! A nem szám típusú
+  elemeket rakd a tömb végére az eredeti sorrendbe. Írasd ki a rendezett tömböt!*/
+function sortOnlyNumbersOfArray(parameterArray) {
+  var tempArray = [];
+  var tempArrayNaN = [];
+  for (var i = 0; i < parameterArray.length; i++) {
+    if (typeof parameterArray[i] === 'number') {
+      tempArray.push(parameterArray[i]);
+    } else {
+      tempArrayNaN.push(parameterArray[i]);
+    }
+  }
+  tempArray = advancedBubbleSort(tempArray);
+  for (i = 0; i < tempArrayNaN.length; i++) {
+    tempArray.push(tempArrayNaN[i]);
+  }
 
+  return tempArray;
+}
+
+document.querySelector('.feladat12').innerHTML = sortOnlyNumbersOfArray(mixedTypeArray);
+/* 12. Feladat vége*/
