@@ -116,3 +116,17 @@ function getTotalAverageOfArray(parameterArray) {
 
 document.querySelector('.feladat3').innerHTML = `A tömb elemeinek átlaga: ${getTotalAverageOfArray(mainArray)}`;
 /* 3. Feladat vége */
+
+/* 4. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb összegét!
+Igazából ha az ember ezt írná meg először, akkor szépen fel lehetne használni az átlagszámításhoz */
+function getSumOfArrayItems(parameterArray) {
+  var totalSum = 0;
+  for (var i = 0; i < parameterArray.length; i++) {
+    totalSum += parameterArray[i];
+  }
+
+  return totalSum;
+}
+
+document.querySelector('.feladat4').innerHTML = `A tömb elemeinek összege: ${getSumOfArrayItems(mainArray)}`;
+/* 4. Feladat vége */
