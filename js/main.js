@@ -150,21 +150,32 @@ document.querySelector('.feladat5').innerHTML = `A tömbben ${getEvenItemsFromAr
 Jobban járunk, ha általánosan írjuk meg a programot, x-ik legkisebb elemre. Ehhez persze elötte rendezni kell
 a tömbünket */
 function getNthMinOfArray(parameterArray, lookingForNthItem) {
-  var nthItem = advancedBubbleSort(mainArray)[lookingForNthItem - 1];
+  var nthItem = advancedBubbleSort(parameterArray)[lookingForNthItem - 1];
 
   return nthItem;
 }
 
-document.querySelector('.feladat6').innerHTML = `A tömb 2. legkisebb elem: ${getNthMinOfArray(mainArray, 2)}`;
+document.querySelector('.feladat6').innerHTML = `A tömb 2. legkisebb eleme: ${getNthMinOfArray(mainArray, 2)}`;
 /* 6. Feladat vége */
+
+/* 7. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb harmadik legnagyobb elemét
+Hasonó az előző feladathoz, de most a tömb végéről kezdünk el számolni*/
+function getNthMaxOfArray(parameterArray, lookingForNthItem) {
+  var nthItem = advancedBubbleSort(parameterArray)[parameterArray.length - lookingForNthItem];
+
+  return nthItem;
+}
+
+document.querySelector('.feladat7').innerHTML = `A tömb 3. legnagyobb eleme: ${getNthMaxOfArray(mainArray, 6)}`;
+/* 7. Feladat vége*/
 
 function advancedBubbleSort(parameterArray) {
   var tempArray = parameterArray.slice();
-  var endIndex = tempArray.length - 1;
+  var endIndex = tempArray.length;
   var newEndIndex;
   while (endIndex > 0) {
     newEndIndex = 0;
-    for (var i = 0; i < endIndex - 1; i++) {
+    for (var i = 0; i < endIndex; i++) {
       if (tempArray[i] > tempArray[i + 1]) {
         [tempArray[i], tempArray[i + 1]] = [tempArray[i + 1], tempArray[i]];
         newEndIndex = i;
