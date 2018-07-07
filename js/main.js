@@ -102,3 +102,17 @@ function getMaxValueOfArray(parameterArray) {
 
 document.querySelector('.feladat2').innerHTML = `A tömb legnagyobb eleme: ${getMaxValueOfArray(mainArray)}`;
 /* 2. Feladat vége*/
+
+/* 3. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb átlagát! */
+function getTotalAverageOfArray(parameterArray) {
+  var totalAverage = 0;
+  for (var i = 0; i < parameterArray.length; i++) {
+    totalAverage += parameterArray[i];
+  }
+  totalAverage /= parameterArray.length;
+
+  return totalAverage;
+}
+
+document.querySelector('.feladat3').innerHTML = `A tömb elemeinek átlaga: ${getTotalAverageOfArray(mainArray)}`;
+/* 3. Feladat vége */
