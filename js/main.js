@@ -409,3 +409,34 @@ function sortOnlyNumbersOfArray(parameterArray) {
 
 document.querySelector('.feladat12').innerHTML = sortOnlyNumbersOfArray(mixedTypeArray);
 /* 12. Feladat vége*/
+
+/* 13. Feladat: Adott egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb. A tömb elemeit rendezzük növekvő
+ sorrendbe. Ezután a felhasználótól kérjünk be egy számot (addig kérjünk be értéket, míg valóban egy véges egész számot
+ ad meg). A számot szúrjuk be a tömbbe úgy, hogy a tömb továbbra is rendezett maradjon, tehát a megfelelő indexű helyre
+ kerüljön be a plusz elem. */
+function insertIntegerToArray(parameterArray) {
+  var tempArray = parameterArray.slice();
+  tempArray = advancedBubbleSort(tempArray);
+  var isInteger = false;
+  while (!isInteger) {
+    var userInput = prompt('Melyik egész számot szúrjam be a rendezett tömbbe?: ');
+    if (parseFloat(userInput) === parseInt(userInput, 10)) {
+      isInteger = true;
+      userInput = parseInt(userInput, 10);
+    }
+  }
+  var i = 0;
+  var inserted = false;
+  do {
+    if (tempArray[i] > userInput) {
+      tempArray.splice(i, 0, userInput);
+      inserted = true;
+    }
+    i++;
+  } while (i < tempArray.length && !inserted);
+
+  return tempArray;
+}
+
+document.querySelector('.feladat13').innerHTML += insertIntegerToArray(mainArray);
+/* 13. Feladat vége */
