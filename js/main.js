@@ -194,6 +194,9 @@ var mixedTypeArray = [2467, 511, 7985, 8284, 2226, 4369, 880, 366, 5234, 7056, 8
 var mixedTypeArrayAgain = [2467, 511, 7985, 'ycYbA', 8284, 2226, 'qnnp0', 'heV9Y', 4369, 'gBSvY', '7XjS0', '90Hy1',
   'KptUs', 880, 366, 5234, 7056, 'PwAfw', 'UlGLz', 'lO3z6'];
 
+var arrayA = [1, 2, 3, 4, 5];
+var arrayB = [3, 4, 5, 6, 7, 8, 9];
+
 /* 1. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét! */
 function getMinValueOfArray(parameterArray) {
   var tempArray = parameterArray.slice();
@@ -466,3 +469,32 @@ function sortStringAfterNumber(parameterArray) {
 
 document.querySelector('.feladat14').innerHTML = sortStringAfterNumber(mixedTypeArrayAgain);
 /* 14. Feladat vége */
+
+/* 15. Feladat: Adott egy tetszőleges pozitív egész számokat tartalmazó tömb.  Válogassuk szét külön egy paros, és
+paratlan nevezetű tömbbe a páros, és páratlan számokat! Írjuk ki a 2 tömböt!*/
+function getEvenNumbersFromArray(parameterArray) {
+  var evenNumbers = [];
+  for (var i = 0; i < parameterArray.length; i++) {
+    if (parameterArray[i] % 2 === 0) {
+      evenNumbers.push(parameterArray[i]);
+    }
+  }
+  return evenNumbers;
+}
+
+function getUnevenNumbersFromArray(parameterArray) {
+  var unevenNumbers = [];
+  for (var i = 0; i < parameterArray.length; i++) {
+    if (parameterArray[i] % 2 === 1) {
+      unevenNumbers.push(parameterArray[i]);
+    }
+  }
+  return unevenNumbers;
+}
+
+document.querySelector('.feladat15ps').innerHTML = `Páros elemek: ${getEvenNumbersFromArray(mainArray)}`;
+document.querySelector('.feladat15ptlan').innerHTML = `Páratlan elemek: ${getUnevenNumbersFromArray(mainArray)}`;
+/* 15. Feladat vége*/
+
+/* 16. Feladat*/
+/* 16. Feladat vége */
