@@ -191,6 +191,38 @@ if (findItemInArray(mainArray, 23)) {
   document.querySelector('.feladat8').innerHTML = 'A tömb nem tartalmazza a keresett számot: 23!';
 }
 /* 8. Feladat vége*/
+
+/* 9. Feladat: Írd ki (igen vagy nem), hogy egy tetszőlegese elemszámú, bármilyen típusú elemeket tartalmazó tömb
+ (feltételezzük, hogy beágyazott tömböt, objektumot nem tartalmaz) tartalmazza e a 23-as számot! Használj logaritmikus
+  keresést! */
+function binaryFindItemInArray(parameterArray, lookingForItem) {
+  var itemFound = false;
+  var tempArray = advancedBubbleSort(parameterArray);
+  var startIndex = 0;
+  var endIndex = tempArray.length;
+  var middleIndex;
+  while (startIndex > endIndex) {
+    middleIndex = Math.floor((startIndex + endIndex) / 2);
+    if (tempArray[middleIndex] < lookingForItem) {
+      startIndex = middleIndex + 1;
+    } else {
+      endIndex = middleIndex;
+    }
+  }
+  if (tempArray[startIndex] === lookingForItem) {
+    itemFound = true;
+    return itemFound;
+  }
+
+  return itemFound;
+}
+
+if (binaryFindItemInArray(mainArray, 23)) {
+  document.querySelector('.feladat9').innerHTML = 'A tömb tartalmazza a keresett számot: 23!';
+} else {
+  document.querySelector('.feladat9').innerHTML = 'A tömb nem tartalmazza a keresett számot: 23!';
+}
+/* 9. feladat vége*/
 function advancedBubbleSort(parameterArray) {
   var tempArray = parameterArray.slice();
   var endIndex = tempArray.length;
