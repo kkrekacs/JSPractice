@@ -169,6 +169,28 @@ function getNthMaxOfArray(parameterArray, lookingForNthItem) {
 document.querySelector('.feladat7').innerHTML = `A tömb 3. legnagyobb eleme: ${getNthMaxOfArray(mainArray, 6)}`;
 /* 7. Feladat vége*/
 
+/* 8. feladat: Írd ki (igen vagy nem), hogy egy tetszőlegese elemszámú, bármilyen típusú elemeket tartalmazó tömb
+ (feltételezzük, hogy beágyazott tömböt, objektumot nem tartalmaz) tartalmazza e a 23-as számot! Használj lineáris
+  keresést!*/
+function findItemInArray(parameterArray, lookingForItem) {
+  var itemFound = false;
+  var i = 0;
+  while (!itemFound && i < parameterArray.length) {
+    if (parameterArray[i] === lookingForItem) {
+      itemFound = true;
+    }
+    i++;
+  }
+
+  return itemFound;
+}
+
+if (findItemInArray(mainArray, 23)) {
+  document.querySelector('.feladat8').innerHTML = 'A tömb tartalmazza a keresett számot: 23!';
+} else {
+  document.querySelector('.feladat8').innerHTML = 'A tömb nem tartalmazza a keresett számot: 23!';
+}
+/* 8. Feladat vége*/
 function advancedBubbleSort(parameterArray) {
   var tempArray = parameterArray.slice();
   var endIndex = tempArray.length;
