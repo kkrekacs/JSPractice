@@ -68,3 +68,20 @@ var mainArray = [2467, 511, 7985, 8284, 2226, 4369, 880, 366, 5234, 7056, 894, 6
   8881, 9732, 8145, 9193, 6784, 7407, 5235, 1166, 5169, 8908, 6109, 6851, 3325, 6852, 3454, 9737, 6039, 7241, 7657, 955,
   2322, 5131, 7125, 1005, 1382, 1320, 4782, 2807, 9351, 563, 1753, 9319, 9115, 7372, 3177, 9943, 2382, 9960, 9322, 1756,
   9115, 453, 6480, 3678, 1865, 6263, 9106];
+
+/* 1. Feladat: Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét! */
+function getMinValueOfArray(parameterArray) {
+  var tempArray = parameterArray.slice();
+  var minItem = tempArray[0];
+
+  for (var i = 1; i < tempArray.length; i++) {
+    if (minItem > tempArray[i]) {
+      minItem = tempArray[i];
+    }
+  }
+
+  return minItem;
+}
+
+document.querySelector('.feladat1').innerHTML = `A tömb legkisebb eleme: ${getMinValueOfArray(mainArray)}`;
+/* 1. Feladat vége*/
